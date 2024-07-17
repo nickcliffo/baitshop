@@ -1,3 +1,8 @@
+/* 
+Author: Nicholas Clifford
+Date: 7/17/2024
+*/
+
 
 :root {
     --background: rgb(0,0,0);
@@ -99,11 +104,20 @@ nav a:hover {
 
 .service {
     display: grid;
-    grid-gap: 30px;
     padding: 3em;
-    grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
     'video respooling video2';
+    grid-gap: 20px;
+}
+
+#video {
+    max-width: 500px;
+    max-height: 600px;
+}
+
+#video2 {
+    max-width: 500px;
+    max-height: 600px;
 }
 
 .service h2 {
@@ -113,7 +127,7 @@ nav a:hover {
     color: var(--accents);
 }
 .service p{
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--background);
@@ -133,6 +147,14 @@ nav a:hover {
     font-size: 1.6rem;
     background-color: var(--background);
     color: var(--accents);
+}
+
+.lures2 {
+    display: none;
+}
+
+.worms2 {
+    display: none;
 }
 
 .header {
@@ -171,6 +193,7 @@ nav a:hover {
 }
 
 .disclaimer {
+    display: grid;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4rem;
 }
@@ -199,3 +222,82 @@ footer a:hover {
     color: var(--accents);
 }
 
+@media (max-width: 1049px) {
+    #video2 {
+        display: none;
+    }
+}
+
+@media (max-width: 665px ) {
+    .service {
+        grid-template-areas: 
+        'respooling'
+        'video';
+    }
+    
+    #video {
+        max-width: 400px;
+        max-height: 500px;
+        padding-left: 50px;
+    }
+}
+
+
+@media (max-width: 758px) {
+    .plastics {
+        grid-template-areas: 
+        'lures2'
+        'luresimg';
+    }
+
+    .webpage1, .webpage2 {
+        display: none;
+    }
+    
+    .lures {
+        display: none;
+    }
+
+    .disclaimer {
+        display: none;
+    }
+
+    .luresimg {
+        padding-left: 90px;
+    }
+
+    .lures2 {
+        display: contents;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: var(--accents);
+        font-size: 2rem;
+    }
+
+    .softbait {
+        grid-template-areas: 
+        'worms2'
+        'wormsimg';
+        grid-gap: 30px;
+    }
+
+    .worms {
+        display: none;
+    }
+
+    .worms2 {
+        display: contents;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--accents);
+        font-size: 2rem;
+    }
+
+    .wormsimg {
+        padding-left: 90px;
+    }
+
+    .rodsimg {
+        padding-left: 90px;
+    }
+}
